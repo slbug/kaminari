@@ -19,7 +19,7 @@ module Kaminari
           # Fetch the values at the specified page number
           #   Model.page(5)
           def self.page(num = nil)
-            limit(default_per_pager_page).offset(default_per_page * ([num.to_i, 1].max - 1)) do
+            limit(default_per_page).offset(default_per_page * ([num.to_i, 1].max - 1)) do
               include Kaminari::ActiveRecordRelationMethods
               include Kaminari::PageScopeMethods
             end
